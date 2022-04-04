@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "883743280994",
+    "project_id": "mathbattle-60fd5",
+    "storage_bucket": "mathbattle-60fd5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883743280994:android:450b6ad84843163328a63b",
+        "android_client_info": {
+          "package_name": "com.example.mathbattle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883743280994-kl0ckq0ujek58kto6glt3n9j72gu36bb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuV2zW6PcpBC74pks_trgbTHb0uWS8CMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "883743280994-kl0ckq0ujek58kto6glt3n9j72gu36bb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
