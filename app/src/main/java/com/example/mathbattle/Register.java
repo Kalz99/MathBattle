@@ -22,13 +22,21 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Register extends AppCompatActivity {
    EditText uname,pw,email;
    Button regBtn;
+   TextView login;
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         mAuth = FirebaseAuth.getInstance();
-
+        login=(TextView) findViewById(R.id.txtlog);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Register.this, Login.class);
+                startActivity(intent);
+            }
+        });
         regBtn=(Button)findViewById(R.id.btnRegister);
         uname=(EditText) findViewById(R.id.txtUname);
         pw=(EditText) findViewById(R.id.txtPassword);
@@ -39,7 +47,7 @@ public class Register extends AppCompatActivity {
 
                 String Username = uname.getText().toString();
                 String psw = pw.getText().toString();
-                String Email = email.getText().toString();
+                String Email = email.getText().toString().trim();
 
                 mAuth.createUserWithEmailAndPassword(Email, psw)
                         .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {

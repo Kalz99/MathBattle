@@ -42,7 +42,7 @@ TextView reg;
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String mail = Email.getText().toString();
+                final String mail = Email.getText().toString().trim();
                 final String password = Password.getText().toString();
                 Toast.makeText(getApplicationContext(), mail, Toast.LENGTH_SHORT).show();
                 if (TextUtils.isEmpty(mail)) {

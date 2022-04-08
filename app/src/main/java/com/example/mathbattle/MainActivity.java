@@ -12,13 +12,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new Handler().postDelayed(new Runnable() {
+        Thread thread = new Thread(){
+
+
             @Override
             public void run() {
-                Intent i = new Intent(MainActivity.this, Login.class);
-                startActivity(i);
-                finish();
+                try{
+                    sleep(5*1000);
+                    Intent i = new Intent(MainActivity.this,Login.class);
+                    startActivity(i);
+
+
+
+                }
+                catch(Exception e)
+                {}
             }
-        }, TIME_OUT);
+        };
+        thread.start();
     }
 }

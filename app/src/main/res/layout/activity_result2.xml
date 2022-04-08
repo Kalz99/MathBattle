@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".result"
-    android:background="@drawable/back">
-
+    android:background="@drawable/back"
+    tools:context=".result2">
     <Button
         android:id="@+id/button"
         android:layout_width="175dp"
@@ -84,10 +83,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/ubuntu"
-        android:text="You Won"
+        android:text="Keep it up"
 
         android:textAllCaps="true"
-        android:textColor="#FFE222"
+        android:textColor="#F60000"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -97,7 +96,7 @@
         app:layout_constraintVertical_bias="0.708" />
 
     <TextView
-        android:id="@+id/txt_rightAns"
+        android:id="@+id/txt_rightAns1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/ubuntu"
@@ -110,7 +109,7 @@
         app:layout_constraintVertical_bias="0.773" />
 
     <TextView
-        android:id="@+id/txt_wrongAns"
+        android:id="@+id/txt_wrongAns1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/ubuntu"
