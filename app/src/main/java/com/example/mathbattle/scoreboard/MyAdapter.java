@@ -1,9 +1,12 @@
-package com.example.mathbattle;
+package com.example.mathbattle.scoreboard;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.mathbattle.Database.playerRankings;
+import com.example.mathbattle.R;
 
 import java.util.ArrayList;
 

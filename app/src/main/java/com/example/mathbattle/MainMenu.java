@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.mathbattle.Game.ModeActivity;
+
 public class MainMenu extends AppCompatActivity {
   Button playBtn,profile;
     @Override

@@ -10,22 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MathBattle">
         <activity
-            android:name=".result2"
+            android:name=".Game.result2"
             android:exported="false" />
         <activity
-            android:name=".Rankings"
+            android:name=".scoreboard.Rankings"
             android:exported="false" />
         <activity
             android:name=".profile"
             android:exported="false" />
         <activity
-            android:name=".result"
+            android:name=".Game.result"
             android:exported="false" />
         <activity
-            android:name=".Game"
+            android:name=".Game.Game"
             android:exported="false" />
         <activity
-            android:name=".ModeActivity"
+            android:name=".Game.ModeActivity"
             android:exported="false" />
         <activity
             android:name=".MainMenu"

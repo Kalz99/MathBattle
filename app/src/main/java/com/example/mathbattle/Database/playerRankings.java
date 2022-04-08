@@ -1,4 +1,4 @@
-package com.example.mathbattle;
+package com.example.mathbattle.Database;
 
 public class playerRankings {
     private String name;
