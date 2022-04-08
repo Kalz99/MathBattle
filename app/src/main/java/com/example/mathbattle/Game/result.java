@@ -3,11 +3,16 @@ package com.example.mathbattle.Game;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mathbattle.MainMenu;
 import com.example.mathbattle.R;
+import com.example.mathbattle.scoreboard.Rankings;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -21,6 +26,7 @@ public class result extends AppCompatActivity {
     FirebaseUser user;
     DatabaseReference db;
     int wrong=0;
+    Button close;
     String uid;
     DatabaseReference mDatabase;
 
@@ -31,6 +37,14 @@ public class result extends AppCompatActivity {
         finalscore=(TextView) findViewById(R.id.txtresultScore);
         Wanswers=(TextView) findViewById(R.id.txt_wrongAns);
         Ranswers=(TextView) findViewById(R.id.txt_rightAns);
+        close=(Button)findViewById(R.id.btn_close2);
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(result.this, MainMenu.class);
+                startActivity(intent);
+            }
+        });
         final int[] score = {getIntent().getIntExtra("RIGHT_ANSWER_COUNT", 0)};
         int finalScore= score[0] *50;
         finalscore.setText(String.valueOf(finalScore));

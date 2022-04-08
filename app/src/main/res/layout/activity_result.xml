@@ -8,7 +8,7 @@
     android:background="@drawable/back">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_close2"
         android:layout_width="175dp"
         android:layout_height="82dp"
         android:background="@drawable/mainbtn"
