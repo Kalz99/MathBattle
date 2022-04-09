@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mathbattle.R;
 
@@ -27,6 +28,7 @@ public class Game extends AppCompatActivity {
     static final private int QUIZ_COUNT = 10;
 
     ArrayList<ArrayList<String>> quizArray= new ArrayList<>();
+
     String quizData[][]={
             {"30","10+10+10","50/2","100/3","10*2"},
             {"100","1000/10","(10*10)/2","10*10*10","500/4"},
@@ -50,18 +52,25 @@ public class Game extends AppCompatActivity {
         ans3=(Button)findViewById(R.id.btnAnswer3);
         ans4=(Button)findViewById(R.id.btnAnswer4);
 
-        for(int i=0;i<quizData.length;i++){
-            ArrayList<String> tempArray = new ArrayList<>();
-            tempArray.add(quizData[i][0]);
-            tempArray.add(quizData[i][1]);
-            tempArray.add(quizData[i][2]);
-            tempArray.add(quizData[i][3]);
-            tempArray.add(quizData[i][4]);
-            quizArray.add(tempArray);
 
-        }
 
-        showNextQuiz();
+
+
+            for(int i=0;i<quizData.length;i++){
+                ArrayList<String> tempArray = new ArrayList<>();
+                tempArray.add(quizData[i][0]);
+                tempArray.add(quizData[i][1]);
+                tempArray.add(quizData[i][2]);
+                tempArray.add(quizData[i][3]);
+                tempArray.add(quizData[i][4]);
+                quizArray.add(tempArray);
+
+            }
+
+            showNextQuiz();
+
+
+
     }
 
     public void showNextQuiz(){

@@ -44,7 +44,7 @@ TextView reg;
             public void onClick(View v) {
                 final String mail = Email.getText().toString().trim();
                 final String password = Password.getText().toString();
-                Toast.makeText(getApplicationContext(), mail, Toast.LENGTH_SHORT).show();
+
                 if (TextUtils.isEmpty(mail)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
                 }

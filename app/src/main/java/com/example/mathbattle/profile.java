@@ -24,13 +24,14 @@ FirebaseUser user;
 Button rank,close,main;
 String uid;
 DatabaseReference db;
-TextView pname,score;
+TextView pname,score,level;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         pname=(TextView)findViewById(R.id.txtname);
         main=(Button)findViewById(R.id.btn_main1);
+        level=(TextView)findViewById(R.id.txtlevel);
 
         score=(TextView)findViewById(R.id.txtscore);
         rank=(Button)findViewById(R.id.btnRanking);
@@ -59,9 +60,11 @@ TextView pname,score;
                 try {
                     String name = dataSnapshot.child("name").getValue().toString();
                     String sscore=dataSnapshot.child("score").getValue().toString();
+                    String lvl=dataSnapshot.child("level").getValue().toString();
 
                     pname.setText(name);
                     score.setText(sscore);
+                    level.setText("Level "+lvl);
                    // Picasso.get().load(img).into(imgpro);
                 }
                 catch (Exception e)

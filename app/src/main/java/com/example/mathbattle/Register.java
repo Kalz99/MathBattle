@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -49,7 +50,13 @@ public class Register extends AppCompatActivity {
                 String Username = uname.getText().toString();
                 String psw = pw.getText().toString();
                 String Email = email.getText().toString().trim();
-
+                if (TextUtils.isEmpty(Username)) {
+                    Toast.makeText(getApplicationContext(), "Enter your name!", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(Email)) {
+                    Toast.makeText(getApplicationContext(), "Enter your email!", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(psw)) {
+                    Toast.makeText(getApplicationContext(), "Enter your password!", Toast.LENGTH_SHORT).show();
+                }else{
                 mAuth.createUserWithEmailAndPassword(Email, psw)
                         .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -59,7 +66,7 @@ public class Register extends AppCompatActivity {
                                     FirebaseUser user = mAuth.getInstance().getCurrentUser();
                                     String id = user.getIdToken(true).toString();
                                     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("USERS");
-                                    Player player = new Player(Username,Email,psw,0,1);
+                                    Player player = new Player(Username, Email, psw, 0, 1);
                                     ref.child(user.getUid()).setValue(player);
                                     Toast.makeText(getApplicationContext(), "Successfully registered", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(Register.this, Login.class);
@@ -71,10 +78,10 @@ public class Register extends AppCompatActivity {
                                     Toast.makeText(Register.this, msg, Toast.LENGTH_SHORT).show();
 
 
-
                                 }
                             }
                         });
+            }
 
             }
         });
