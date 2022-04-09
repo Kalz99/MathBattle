@@ -110,9 +110,16 @@ public class Game extends AppCompatActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (quizCount == QUIZ_COUNT) {
                     // Show Result.
-                   Intent intent = new Intent(getApplicationContext(), result.class);
-                   intent.putExtra("RIGHT_ANSWER_COUNT", rightAnswercount);
-                  startActivity(intent);
+                    if(rightAnswercount>5){
+                         Intent intent = new Intent(getApplicationContext(), result.class);
+                        intent.putExtra("RIGHT_ANSWER_COUNT", rightAnswercount);
+                        startActivity(intent);
+                    }else{
+                        Intent intent = new Intent(getApplicationContext(), result2.class);
+                        intent.putExtra("RIGHT_ANSWER_COUNT", rightAnswercount);
+                        startActivity(intent);
+                    }
+
 
                 } else {
                     quizCount++;
