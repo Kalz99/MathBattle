@@ -10,7 +10,7 @@ import android.widget.Button;
 import com.example.mathbattle.Game.ModeActivity;
 
 public class MainMenu extends AppCompatActivity {
-  Button playBtn,profile;
+  Button playBtn,profile,howto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,11 +18,19 @@ public class MainMenu extends AppCompatActivity {
 
         playBtn=(Button)findViewById(R.id.btnPlay);
         profile=(Button)findViewById(R.id.btnProfile);
+        howto=(Button)findViewById(R.id.btnHowto);
 
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenu.this, ModeActivity.class);
+                startActivity(intent);
+            }
+        });
+        howto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenu.this, Howtoplay.class);
                 startActivity(intent);
             }
         });
